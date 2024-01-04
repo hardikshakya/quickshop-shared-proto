@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package order;
+
+// OrderService provides methods for creating and managing orders
+service OrderService {
+  // CreateOrder creates a new order based on the provided request
+  rpc CreateOrder (CreateOrderRequest) returns (CreateOrderResponse) {}
+}
+
+// CreateOrderRequest represents the required information to create a new order
+message CreateOrderRequest {
+  int32 productId = 1;
+  int32 quantity = 2;
+  int32 userId = 3;
+}
+
+// CreateOrderResponse represents the response after order creation
+message CreateOrderResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  int32 id = 3;
+}
