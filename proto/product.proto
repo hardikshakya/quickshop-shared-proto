@@ -51,6 +51,7 @@ message FindOneResponse {
 // DecreaseStockRequest represents the required information to decrease the stock of a product
 message DecreaseStockRequest {
   int32 id = 1;
+  int32 orderId = 2;
 }
 
 // DecreaseStockResponse represents the response after decreasing the stock of a product
